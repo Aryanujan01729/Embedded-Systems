@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "author": "Kanishk Maheshwari",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-st-nucleo-c031c6", "id": "nucleo", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 25.2, "left": 311, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "led1:A", "nucleo:D13", "green", [ "v0" ] ],
+    [ "led1:C", "nucleo:GND.9", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
