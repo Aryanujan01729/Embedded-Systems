@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Kanishk Maheshwari",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-st-nucleo-c031c6", "id": "nucleo", "top": 0.83, "left": -0.98, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 25.2, "left": 311, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 258.6,
+      "left": -131.4,
+      "rotate": 90,
+      "attrs": { "color": "grey", "xray": "", "bounce": "0" }
+    }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "led1:A", "nucleo:D13", "green", [ "v0" ] ],
+    [ "led1:C", "nucleo:GND.9", "green", [ "v0" ] ],
+    [ "btn1:1.r", "nucleo:A2", "green", [ "v0" ] ],
+    [ "nucleo:3V3.2", "btn1:2.l", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
